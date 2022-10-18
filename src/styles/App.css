@@ -1,0 +1,13 @@
+*{
+    background-color: black;
+    color: whitesmoke;
+}
+html, body{
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}

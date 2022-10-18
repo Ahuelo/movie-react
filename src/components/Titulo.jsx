@@ -1,7 +1,9 @@
+import '../styles/Titulo.css';
+
 function Titulo (){
     return (
         <>
-        <h1>Movies</h1>
+        <h1 className='Titulo'>Movies</h1>
         </>
     )
 };
