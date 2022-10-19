@@ -1,26 +1,24 @@
 import React from "react";
 import './styles/App.css'
 import { Titulo } from  './components/Titulo';
-import { CatalogoPelis } from './components/CatalogoPelis';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-function App() {
+import { LandingPage } from './pages/LandingPage';
+import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
+import { MovieDetails } from './pages/MovieDetails';
+
+
+  function App() {
   return (
     <Router>
       <header className="App">
-        <Titulo/>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/movie'}>Movie</Link>
+        <Link to={'/'}><Titulo/></Link> 
+ {/*        <Link to={'/'}>Home</Link>
+        <Link to={'/movie'}>Movie</Link> */}
       </header>
       <main>
       </main>
       <Switch>
-          <Route exact path="/movie">Movie</Route>
-          <Route path="/">Home</Route>
+          <Route exact path="/movies/:movieId"> <MovieDetails/> </Route>
+          <Route path="/"> <LandingPage/> </Route>
       </Switch>
     </Router>
   )
