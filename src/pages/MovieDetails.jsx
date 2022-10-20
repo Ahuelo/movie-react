@@ -1,7 +1,23 @@
 import movie  from './movie.json';
 import '../styles/MovieDetails.css';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getAllMovies } from '../services/movies';
 
 function MovieDetails () {
+    const { movieId } = useParams();
+    const [movie, setMovie] = useState(null);
+    
+    useEffect(()=>{
+        getAllMovies(`/movie/${movieId}`).then(data =>{
+            setMovie(data);
+        })
+    }, [movieId]);
+
+    if (!movie){
+        return null;
+    }
+
     const imageURL = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     return(
         <div className={'detailsContainer'}>
