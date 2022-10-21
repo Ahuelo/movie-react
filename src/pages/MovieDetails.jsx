@@ -10,7 +10,7 @@ function MovieDetails () {
     /* El siguiente useState, hará una carga y avisará que se esta cargando */
     const [isLoading, setIsLoading] = useState(true);
     const [movie, setMovie] = useState(null);
-    
+
     useEffect(()=>{
         /* se presenta la carga previa a la carga de la pelicula */
         setIsLoading(true);
